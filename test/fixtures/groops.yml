@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workshop_id: 1
+  date: 2015-08-08 09:08:28
+  title: MyString
+  available_seats: 1
+  reserved_seats: 1
+
+two:
+  workshop_id: 1
+  date: 2015-08-08 09:08:28
+  title: MyString
+  available_seats: 1
+  reserved_seats: 1

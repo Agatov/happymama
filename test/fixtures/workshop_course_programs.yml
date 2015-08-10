@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workshop_id: 1
+  day: 1
+  title: MyString
+  theoretical_part: MyText
+  practical_part: MyText
+
+two:
+  workshop_id: 1
+  day: 1
+  title: MyString
+  theoretical_part: MyText
+  practical_part: MyText

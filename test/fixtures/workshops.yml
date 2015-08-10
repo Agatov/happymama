@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  about: MyText
+  image: MyString
+  duration: 1
+  price: 1
+  description: 
+  course_price: 1
+  workshops_count: 1
+
+two:
+  name: MyString
+  about: MyText
+  image: MyString
+  duration: 1
+  price: 1
+  description: 
+  course_price: 1
+  workshops_count: 1
