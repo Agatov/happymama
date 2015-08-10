@@ -18,28 +18,35 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'thin'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+gem 'simple_form', github: 'plataformatec/simple_form'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+# Use unicorn as the app server
+gem 'unicorn'
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+# Use debugger
+# gem 'debugger', group: [:development, :test]
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
+gem 'breadcrumbs_on_rails'
 
+gem 'rmagick', :require => 'RMagick'
+gem 'carrierwave'
+
+gem 'meta-tags'
+
+gem 'russian'
+
+gem 'pony'
+gem 'geocoder'
+gem 'mysql2', group: :production
+
+gem 'net-ssh', '~>2.7.0'
+gem 'capistrano', '~> 2.15.5', group: :development
+gem 'wysiwyg-rails'
+gem 'font-awesome-rails'
+
+gem 'bxslider-rails'
+gem "slim"
