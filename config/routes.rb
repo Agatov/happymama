@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :teachers
     resources :groops
     resources :reviews
+    resources :places
   end
 end

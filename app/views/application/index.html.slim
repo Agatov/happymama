@@ -58,14 +58,16 @@ section
       .groop-column.only-groops
         .groop-column-title Ближайшие группы
         .groops
-          .groop
-            .date 15 сентября
-            .content
-              a (href = "#") «Полный курс подготовки к родам».
-              | 16 занятий. Стоимость 14 400 рублей. Осталось 2 места из десяти.
+          - @course_groops.each do |groop|
+            = render partial: "groops/groop", locals: {groop: groop}
+
 
       .groop-column.only-seminars
         .groop-column-title Ближайшие семинары
+        .groops
+          - @seminar_groops.each do |groop|
+            = render partial: "groops/groop", locals: {groop: groop}
+
 
 
 section.striped
@@ -73,11 +75,5 @@ section.striped
     .title Наши преподаватели
 
     .teachers
-      .teacher
-        .content
-          .avatar
-          .name Ирина Носова
-          .position Акушер-гинеколог
-          .about
-            |
-              Ирина - практикующий акушер-гинеколог с двенадцатью годами опыта за плечами. В «Жемчужинке» работает уже более семи лет и заслужила огромное количество благодарностей и подарков от студентов, ставших родителями.
+      - @teachers.each do |teacher|
+        = render partial: "teachers/teacher", locals: {teacher: teacher}

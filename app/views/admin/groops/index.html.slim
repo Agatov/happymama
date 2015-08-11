@@ -7,20 +7,18 @@ table.table
     tr
       th Занятие
       th Дата
-      th Заголовок
       th Мест всего
-      th Мест занято
       th Мест свободно
       th
   tbody
     - @groops.each do |groop|
       tr
         td = groop.workshop.name
-        td = groop.created_at.strftime("%Y-%m-%d %H:%M")
-        td = groop.title
-        td 10
-        td 10
-        td 10
+        td 
+          = groop.date.strftime("%Y-%m-%d")
+          = "в #{groop.time}"
+        td = groop.total_seats.to_s
+        td = groop.seats_available.to_s
         td 
           = link_to "редактировать", edit_admin_groop_path(groop), class: ['btn', 'btn-default']
           = " "

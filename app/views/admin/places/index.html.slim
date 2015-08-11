@@ -1,0 +1,21 @@
+legend
+  | Список залов
+  a.btn (href = new_admin_place_path style = "float: right") Добавить зал
+
+table.table
+  thead
+    tr
+      th Метро
+      th Телефон
+      th Адрес
+      th
+  tbody
+    - @places.each do |place|
+      tr
+        td = place.metro
+        td = place.phone
+        td = place.address
+        td 
+          = link_to "редактировать", edit_admin_place_path(place), class: ['btn', 'btn-default']
+          = " "
+          = link_to "удалить", admin_place_path(place), method: :delete, confirm: "Удалить зал?", class: ['btn', 'btn-default']

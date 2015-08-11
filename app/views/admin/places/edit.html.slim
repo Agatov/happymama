@@ -1,0 +1,6 @@
+legend
+  | Редактирование зала
+
+.row
+  .col-md-8
+    = render partial: "admin/places/form", locals: {place: @place, url: admin_place_path(@place)}

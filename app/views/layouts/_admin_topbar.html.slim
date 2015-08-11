@@ -19,3 +19,6 @@ nav.navbar.navbar-default (role = "navigation")
 
         li(class = (params[:controller] == 'admin/reviews' ? 'active' : ''))
           a(href = admin_reviews_path) Отзывы
+
+        li(class = (params[:controller] == 'admin/places' ? 'active' : ''))
+          a(href = admin_places_path) Залы

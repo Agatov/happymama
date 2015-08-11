@@ -35,8 +35,9 @@ ru:
         
       groop:
         workshop: "Семинар"
+        place: "Место проведения"
         date: "Дата"
-        title: "Заголовок"
+        time: "Время"
         total_seats: "Мест всего"
         reserved_seats: "Мест занято"
 
@@ -45,4 +46,9 @@ ru:
         title: "Заголовок"
         theoretical_part: "Теоретическая часть"
         practical_part: "Практическая часть"
+
+      place:
+        metro: "Станция метро"
+        phone: "Номер телефона"
+        address: "Адрес"
 

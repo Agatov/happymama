@@ -43,37 +43,8 @@ section
                     всех занятий курса
           .button Записаться
 
-section.striped
-  .wrapper
-    .subtitle Ближайшие группы
 
-    table.workshop-schedule
-      thead
-        tr
-          th Дата и время
-          th Площадка
-          th Размер группы
-          th Количество свободных мест
-
-      tbody
-        tr
-          td 14 сентября в 12:00
-          td «Проспект Мира»
-          td 10 человек
-          td Осталось 2 свободых места
-
-        tr
-          td 14 сентября в 12:00
-          td «Проспект Мира»
-          td 10 человек
-          td Осталось 2 свободых места
-
-        tr
-          td 14 сентября в 12:00
-          td «Проспект Мира»
-          td 10 человек
-          td Осталось 2 свободых места
-
+= render partial: "workshops/schedule_table", locals: {workshop: @workshop}
 = render partial: "workshops/exclusives"
 
 - if @workshop.teachers.count > 0
