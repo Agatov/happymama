@@ -1,0 +1,46 @@
+.teachers
+  @extend .clearfix
+  .teacher
+    float: left
+    width: 460px
+    margin-right: 20px
+    margin-bottom: 20px
+    box-sizing: border-box
+    padding: 30px
+    background: #fff
+    border: 1px solid rgba(206, 220, 228, .4)
+    border-radius: 2px
+
+    &:nth-child(2n)
+      margin-right: 0px
+
+    .content
+      position: relative
+      padding-left: 110px
+
+      .avatar
+        position: absolute
+        top: 0px
+        left: 0px
+        width: 90px
+        height: 90px
+        background: #eee
+        border-radius: 50px
+
+        img
+          width: 90px
+          height: 90px
+          border-radius: 50px
+
+      .name
+        font-family: "OpenSans-Semibold"
+        margin-bottom: 5px
+
+      .position
+        font-size: 12px
+        margin-bottom: 20px
+
+      .about
+        font-family: "OpenSans-Light"
+        font-size: 14px
+        line-height: 20px

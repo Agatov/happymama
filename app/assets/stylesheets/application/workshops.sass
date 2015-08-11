@@ -1,0 +1,91 @@
+.workshops
+  @extend .clearfix
+  padding: 50px 0 30px 0
+
+  &.blue
+    @include blue_with_borders
+
+.workshop-category
+  @extend .clearfix
+
+  .name
+    font-size: 24px
+    margin-bottom: 30px
+
+.workshop
+  display: block
+  float: left
+  position: relative
+  width: 300px
+  height: 475px
+  background: #eee
+  margin-right: 20px
+  margin-bottom: 20px
+  color: #fff
+
+  &:nth-child(3n)
+    margin-right: 0px
+
+  &.hidden
+    display: none
+
+  img
+    z-index: 1
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 300px
+    height: 475px
+
+  .overlay
+    z-index: 2
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 300px
+    height: 475px
+    background: asset-url("workshop_overlay.png") no-repeat
+    background-size: 300px 475px
+
+  .content
+    z-index: 3
+    position: absolute
+    bottom: 85px
+    left: 0px
+    width: 300px
+    padding: 0px 20px
+    box-sizing: border-box
+
+    .name
+      font-family: "OpenSans-Semibold"
+      font-size: 24px
+      line-height: 28px
+      margin-bottom: 15px
+
+    .about
+      font-size: 15px
+      line-height: 20px
+
+  .footer
+    z-index: 4
+    @extend .clearfix
+    position: absolute
+    bottom: 0px
+    left: 20px
+    width: 260px
+    height: 60px
+    line-height: 60px
+    border-top: 1px solid rgba(255, 255, 255, 0.7)
+
+    .duration
+      float: left
+      font-family: "OpenSans-Semibold"
+      font-size: 15px
+
+    .price
+      float: right
+      font-family: "OpenSans-Bold"
+      font-size: 24px
+
+
+      

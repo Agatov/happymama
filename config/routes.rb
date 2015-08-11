@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root to: "application#index"
+
+  resources :workshops, only: [:index, :show]
+
   namespace :admin do
     resources :workshops do
       resources :programs

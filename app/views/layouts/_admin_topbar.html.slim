@@ -1,0 +1,21 @@
+nav.navbar.navbar-default (role = "navigation")
+  .container
+    a.navbar-brand(href = admin_workshops_path) ПАНЕЛЬ УПРАВЛЕНИЯ
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+
+        li(class = (params[:controller] == 'admin/groops' ? 'active' : ''))
+          a(href = admin_groops_path) Группы
+
+        li(class = (params[:controller] == 'admin/categories' ? 'active' : ''))
+          a(href = admin_categories_path) Категории
+
+        li(class = (params[:controller] == 'admin/workshops' ? 'active' : ''))
+          a(href = admin_workshops_path) Курсы и семинары
+
+        li(class = (params[:controller] == 'admin/teachers' ? 'active' : ''))
+          a(href = admin_teachers_path) Преподаватели
+
+        li(class = (params[:controller] == 'admin/reviews' ? 'active' : ''))
+          a(href = admin_reviews_path) Отзывы

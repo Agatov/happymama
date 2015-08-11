@@ -1,0 +1,53 @@
+
+.groop-columns
+  @extend .clearfix
+
+.groop-column
+  width: 400px
+
+  &.only-groops
+    float: left
+
+    .groop-column-title
+      background: asset-url("only_groops.png") no-repeat
+      background-size: 32px 26px
+      background-position: 0px 0px
+
+  &.only-seminars
+    float: right
+
+    .groop-column-title
+      background: asset-url("only_seminars.png") no-repeat
+      background-size: 32px 26px
+      background-position: 0px 0px
+
+  .groop-column-title
+    padding-left: 45px
+    padding-bottom: 15px
+    border-bottom: 1px solid #CEDCE4
+    font-size: 18px
+    color: #3999DA
+    box-sizing: border-box
+
+.groops
+  width: 400px
+  .groop
+    width: 400px
+    margin-top: 30px
+
+    .date
+      display: inline-block
+      padding: 6px 15px
+      font-family: "OpenSans-Semibold"
+      font-size: 14px
+      color: #fff
+      background: #3999DA
+      border-radius: 4px
+      margin-bottom: 15px
+
+    .content
+      font-size: 15px
+      line-height: 24px
+      a
+        text-decoration: underline
+

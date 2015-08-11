@@ -1,0 +1,21 @@
+- hidden = false unless hidden
+
+a.workshop (href = workshop_path(workshop) class = (hidden ? 'hidden' : nil) category_id = workshop.category_id)
+  = image_tag workshop.image_url(:thumb)
+  .overlay
+  .content
+    .name = workshop.name
+    .about = workshop.about
+  .footer
+    .duration 
+      - if workshop.course?
+        = "#{workshop.workshops_count.to_s} "
+        = Russian.p(workshop.workshops_count, "занятие", "занятия", "занятий")
+      - else
+        = "#{workshop.duration.to_s} "
+        = Russian.p(workshop.duration, "минута", "минуты", "минут")
+    .price 
+      - if workshop.course?
+        = "#{workshop.course_price.to_s}Р"
+      - else
+        = "#{workshop.price.to_s}Р"

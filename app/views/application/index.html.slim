@@ -1,0 +1,83 @@
+.intro
+  .wrapper
+    .intro-title
+      |
+        Обучающие курсы и семинары 
+        для будущих мам и пап
+
+
+section
+  .wrapper
+    .facts
+      .fact
+        .fact-name
+          | 15 
+          em лет опыта
+        .fact-text
+          | 
+            Тренинговый центр «Жемчужинка» функционирует в течение пятнадцати лет, а открыт он был 12 мая 2000 года
+
+      .fact
+        .fact-name
+          | 208 
+          em отзывов
+        .fact-text
+          | 
+            На странице «Отзывы» вы можете ознакомиться с 208 рукописными  отзывами о нашей организации
+
+      .fact
+        .fact-name
+          | 9 000 
+          em слушателей
+        .fact-text
+          | 
+            За 15 лет работы наши курсы и семинары посетили более девяти тысяч слушателей.
+
+section.without-bottom-padding
+  .wrapper
+    .title Наши курсы и семинары
+
+    ul.workshops-categories
+      - @categories.each do |category|
+        li (class = (category.id == @categories.first.id ? 'active' : nil ) category_id = category.id.to_s)
+          a (href = "#") = category.name
+
+  .workshops.blue
+    .wrapper
+      - @categories.each do |category|
+        - category.workshops.each do |workshop|
+          - hidden = workshop.category_id != @categories.first.id ? true : false
+          = render partial: "workshops/workshop", locals: {workshop: workshop, hidden: hidden}
+
+
+section
+  .wrapper
+    .title Расписание ближайших занятий
+
+    .groop-columns
+      .groop-column.only-groops
+        .groop-column-title Ближайшие группы
+        .groops
+          .groop
+            .date 15 сентября
+            .content
+              a (href = "#") «Полный курс подготовки к родам».
+              | 16 занятий. Стоимость 14 400 рублей. Осталось 2 места из десяти.
+
+      .groop-column.only-seminars
+        .groop-column-title Ближайшие семинары
+
+
+section.striped
+  .wrapper
+    .title Наши преподаватели
+
+    .teachers
+      .teacher
+        .content
+          .avatar
+          .name Ирина Носова
+          .position Акушер-гинеколог
+          .about
+            |
+              Ирина - практикующий акушер-гинеколог с двенадцатью годами опыта за плечами. В «Жемчужинке» работает уже более семи лет и заслужила огромное количество благодарностей и подарков от студентов, ставших родителями.

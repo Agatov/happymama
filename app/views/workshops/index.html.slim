@@ -1,0 +1,17 @@
+.wrapper
+  .page-path
+    = link_to "Главная страница", root_path
+    = " / "
+  .page-name Все курсы тренингового центра «Жемчужинка»
+
+
+- i = 0
+- @categories.each do |category|
+  - i += 1
+  section (class = (i.even? ? 'striped': nil))
+    .wrapper
+      .workshop-category
+        .name = category.name
+        .workshops-list
+          - category.workshops.each do |workshop|
+            = render partial: "workshops/workshop", locals: {workshop: workshop}

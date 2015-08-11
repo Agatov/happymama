@@ -1,7 +1,10 @@
 $ ->
 
-  $('.show-shops').on 'click', ->
-    $('body').animate({scrollTop: "#{$(".shops-title").offset().top}px"}, 300)
-    false
+  $("ul.workshops-categories li a").on "click", ->
+    $(@).parent().addClass("active")
+    $(@).parent().siblings().removeClass("active")
 
-  $(".bxslider").bxSlider({auto: true})
+    $(".workshop").addClass("hidden")
+    $(".workshop[category_id=#{$(@).parent().attr('category_id')}]").removeClass('hidden')
+
+    false

@@ -1,0 +1,39 @@
+.program
+  @extend .clearfix
+  width: 540px
+  padding: 30px 20px
+  box-sizing: border-box
+
+  &:nth-child(odd)
+    @include blue_with_borders
+
+
+  .program-day
+    float: left
+    width: 110px
+    font-size: 16px
+
+    .em
+      padding-top: 5px
+      font-size: 12px
+
+  .program-content
+    float: left
+    width: 360px
+    padding-left: 15px
+    border-left: 1px solid rgba(206,220,228, 0.6)
+
+    .program-section
+      margin-bottom: 20px
+
+      &:last-child
+        margin-bottom: 0px
+
+      .program-section-name
+        font-family: "OpenSans-LightItalic"
+        font-size: 14px
+        margin-bottom: 10px
+
+      .program-section-content
+        font-size: 13px
+        line-height: 20px

@@ -1,0 +1,48 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'Обязательно'
+      mark: '<i style="color: red; font-size: 16px">*</i>'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "При заполнении формы допущены ошибки, проверьте:"
+    labels:
+      category:
+        name: "Название категории"
+
+      workshop:
+        name: "Название"
+        category: "Категория"
+        image: Изображение
+        course: "Отметьте, если это курс"
+        duration: Длительность семинара в минутах
+        price: Стоимость семинара (рублей)
+        workshops_count: Количество занятий в курсе
+        course_price: Стоимость курса (рублей)
+        about: "Короткое описание (выводится на картинке)"
+        description: "Полное описание (выводится на странице курсы или семинара)"
+        teachers: Преподаватели
+
+      teacher:
+        name: "Имя"
+        position: "Должность"
+        avatar: "Аватарка"
+        about: "Короткое описание"
+        
+      groop:
+        workshop: "Семинар"
+        date: "Дата"
+        title: "Заголовок"
+        total_seats: "Мест всего"
+        reserved_seats: "Мест занято"
+
+      workshop_course_program:
+        day: "Номер занятия"
+        title: "Заголовок"
+        theoretical_part: "Теоретическая часть"
+        practical_part: "Практическая часть"
+

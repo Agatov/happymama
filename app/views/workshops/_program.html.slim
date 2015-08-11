@@ -1,0 +1,16 @@
+.program
+  .program-day
+    = "Занятие № #{program.day.to_s}"
+    .em = program.title
+  .program-content
+    - if program.theoretical_part.length > 0
+      .program-section
+        .program-section-name Теоретическая часть
+        .program-section-content 
+          = program.theoretical_part
+
+    - if program.practical_part.length > 0
+      .program-section
+        .program-section-name Практическая часть
+        .program-section-content
+          = program.practical_part

@@ -1,0 +1,114 @@
+@mixin blue_with_borders
+  background: rgba(163, 217, 254, .05)
+  border: 1px solid rgba(206, 220, 228, .4)
+
+body
+  font-family: "OpenSans-Regular"
+  color: #4B5359
+
+.wrapper
+  width: 940px
+  margin: 0px auto
+
+section
+  padding: 50px 0
+
+  &.striped
+    @include blue_with_borders
+
+  &.without-bottom-padding
+    padding-bottom: 0px
+
+  .title
+    font-family: "OpenSans-Semibold"
+    font-size: 32px
+    margin-bottom: 50px
+
+  .subtitle
+    font-size: 24px
+    margin-bottom: 50px
+
+h1
+
+h2
+
+h3
+
+p
+
+a
+  text-decoration: none
+  color: #3999DA
+
+
+.clearfix
+  &:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+.intro
+  position: relative
+  background: asset-url("intro.jpg") no-repeat
+  background-size: cover
+  background-position: 50% 50%
+  width: 100%
+  height: 520px
+
+  .intro-title
+    z-index: 3
+    padding: 195px 0
+    font-family: "OpenSans-Bold"
+    font-size: 48px
+    line-height: 65px
+    color: #fff
+    text-align: center
+
+.facts
+  padding: 20px 0
+  @extend .clearfix
+
+  .fact
+    float: left
+    width: 300px
+    margin-right: 20px
+
+    &:last-child
+      margin-right: 0px
+
+  .fact-name
+    font-family: "OpenSans-Light"
+    font-size: 48px
+    color: #3999DA
+    margin-bottom: 15px
+
+    em
+      font-size: 24px
+
+  .fact-text
+    font-size: 16px
+    line-height: 24px
+
+
+.page-path
+  font-size: 14px
+  margin-top: 50px
+  margin-bottom: 10px
+
+.page-name
+  font-family: "OpenSans-Semibold"
+  font-size: 24px
+
+.hidden
+  display: none
+
+
+.footer
+  position: relative
+  font-family: "OpenSans-Light"
+  font-size: 14px
+  line-height: 19px
+  text-align: left
