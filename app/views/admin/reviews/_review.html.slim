@@ -1,0 +1,6 @@
+.col-xs-2.col-md-2
+  .thumbnail.text-center
+    a (href = review.image_url target = "_blank")
+      = image_tag review.image_url(:thumb)
+      br
+      = link_to "удалить", admin_review_path(review), method: :delete, confirm: "Удалить?"

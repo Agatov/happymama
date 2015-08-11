@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "application#index"
 
   resources :workshops, only: [:index, :show]
+  resources :contacts, only: :index
+  resources :reviews, only: :index
 
   namespace :admin do
     resources :workshops do

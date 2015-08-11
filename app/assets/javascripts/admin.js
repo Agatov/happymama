@@ -17,6 +17,9 @@
 //= require langs/ru.js
 //= require datepicker/bootstrap-datepicker
 //= require datepicker/bootstrap-datepicker.ru.min
+//= require jquery.ui.widget
+//= require fileupload/jquery.iframe-transport
+//= require fileupload/jquery.fileupload
 //= require initializer_admin
 
 

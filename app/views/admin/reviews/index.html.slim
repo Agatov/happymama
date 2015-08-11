@@ -1,2 +1,10 @@
 legend
   | Список отзывов
+
+
+input#fileupload (type="file" name="review[image]" multiple)
+
+
+.row#reviews
+  - @reviews.each do |review|
+    = render partial: "admin/reviews/review", locals: {review: review}

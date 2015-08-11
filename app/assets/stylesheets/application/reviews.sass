@@ -1,0 +1,30 @@
+.reviews
+  @extend .clearfix
+
+  .review
+    float: left
+    display: block
+    position: relative
+    width: 140px
+    height: 180px
+    margin-right: 20px
+    margin-bottom: 20px
+
+    &:nth-child(6n)
+      margin-right: 0px
+
+    .overlay
+      position: absolute
+      z-index: 2
+      top: 0px
+      left: 0px
+      width: 140px
+      height: 180px
+      background: rgba(163, 217, 254, .6)
+
+      text-align: center
+      line-height: 180px
+      font-family: "OpenSans-Semibold"
+      font-size: 18px
+      color: #fff
+

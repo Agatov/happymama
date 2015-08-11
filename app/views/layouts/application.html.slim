@@ -5,7 +5,9 @@ html
     = javascript_include_tag 'application'
 
 
-    title Жемчужинка
+
+    title 
+      = content_for?(:title) ? content_for(:title) : "Жемчужинка | Семейный центр"
 
   body
     = render partial: "layouts/topbar"
