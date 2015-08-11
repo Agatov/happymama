@@ -1,0 +1,6 @@
+legend
+  | Редактирование группы
+
+.row
+  .col-md-8
+    = render partial: "admin/groops/form", locals: {groop: @groop, url: admin_groop_path(@groop)}

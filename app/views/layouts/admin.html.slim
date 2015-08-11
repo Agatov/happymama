@@ -8,4 +8,6 @@ html
     title Панель управления
 
   body
-    = yield
+    = render partial: 'layouts/admin_topbar'
+    .container
+      = yield

@@ -1,0 +1,6 @@
+legend
+  | Создание преподавателя
+
+.row
+  .col-md-8
+    = render partial: "admin/teachers/form", locals: {teacher: @teacher, url: admin_teachers_path}

@@ -1,0 +1,19 @@
+legend
+  | Преподаватели
+  a.btn (href = new_admin_teacher_path style = "float: right") Добавить преподавателя
+
+table.table
+  thead
+    tr
+      th Имя
+      th Должность
+      th
+  tbody
+    - @teachers.each do |teacher|
+      tr
+        td = teacher.name
+        td = teacher.position
+        td 
+          = link_to "редактировать", edit_admin_teacher_path(teacher), class: ['btn', 'btn-default']
+          = " "
+          = link_to "удалить", admin_teacher_path(teacher), method: :delete, confirm: "Удалить преподавателя?", class: ['btn', 'btn-default']

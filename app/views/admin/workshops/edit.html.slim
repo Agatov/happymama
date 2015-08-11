@@ -1,0 +1,12 @@
+legend
+  | Редактирование занятия
+
+.row
+  .col-md-8
+    = render partial: "admin/workshops/form", locals: {workshop: @workshop, url: admin_workshop_path(@workshop)}
+  .col-md-4
+    .well
+      = link_to "Расписание занятий", admin_workshop_programs_path(@workshop)
+
+    .well
+      = image_tag @workshop.image_url(:thumb)

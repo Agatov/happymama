@@ -15,6 +15,9 @@
 //= require_tree ./bootstrap
 //= require froala_editor.min.js
 //= require langs/ru.js
+//= require datepicker/bootstrap-datepicker
+//= require datepicker/bootstrap-datepicker.ru.min
 //= require initializer_admin
+
 
 

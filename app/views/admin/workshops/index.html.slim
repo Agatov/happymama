@@ -1,1 +1,20 @@
-h1 Это индекс, детка
+legend
+  | Курсы и семинары
+  a.btn (href = new_admin_workshop_path style = "float: right") Создать категорию
+
+table.table
+  thead
+    tr
+      th Категория
+      th Название
+      th Стоимость
+      th
+  tbody
+    - @workshops.each do |workshop|
+      tr
+        td = workshop.category.name
+        td = workshop.name
+        td
+          = link_to "редактировать", edit_admin_workshop_path(workshop), class: ['btn', 'btn-default']
+          = " "
+          = link_to "удалить", admin_workshop_path(workshop), method: :delete, confirm: "Удалить семинар?", class: ['btn', 'btn-default']

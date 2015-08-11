@@ -1,0 +1,6 @@
+legend
+  | Добавить занятие
+
+.row
+  .col-md-8
+    = render partial: "admin/workshops/form", locals: {workshop: @workshop, url: admin_workshops_path}

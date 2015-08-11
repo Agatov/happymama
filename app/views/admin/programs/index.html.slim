@@ -1,0 +1,13 @@
+legend
+  = "Расписание занятий для курса  <#{@workshop.name}>"
+  a.btn (href = new_admin_workshop_program_path(@workshop) style = "float: right") Добавить занятие
+
+table.table
+  tbody
+    - @programs.each do |program|
+      tr
+        td = "#{program.day.to_s}-е #{program.title}"
+        td 
+          = link_to "редактировать", edit_admin_workshop_program_path(@workshop, program), class: ['btn', 'btn-default']
+          = " "
+          = link_to "удалить", admin_workshop_program_path(@workshop, program), method: :delete, confirm: "Удалить занятие?", class: ['btn', 'btn-default']

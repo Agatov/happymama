@@ -1,0 +1,6 @@
+= simple_form_for groop, url: url do |f|
+  = f.association :workshop
+  = f.input :title
+  = f.input :date, as: :string, input_html: {class: "datepicker", value: f.object.date.strftime("%Y-%m-%d")}
+  = f.input :reserved_seats
+  = f.submit 'Готово', class: [:btn, 'btn-lg', 'btn-success']

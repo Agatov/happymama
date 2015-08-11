@@ -1,0 +1,12 @@
+= simple_form_for workshop, url: url do |f|
+  = f.association :category
+  = f.input :name
+  = f.input :image
+  = f.input :course
+  = f.input :duration
+  = f.input :workshops_count
+  = f.input :price
+  = f.input :course_price
+  = f.input :about
+  = f.association :teachers
+  = f.submit 'Готово', class: [:btn, 'btn-lg', 'btn-success']

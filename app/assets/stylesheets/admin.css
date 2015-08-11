@@ -3,6 +3,7 @@
  *= require froala_editor.min.css
  *= require froala_style.min.css
  *= require font-awesome
+ *= require datepicker/bootstrap-datepicker
  */
 
 /*@import "font-awesome";*/

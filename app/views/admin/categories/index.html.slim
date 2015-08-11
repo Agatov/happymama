@@ -1,0 +1,19 @@
+legend
+  | Категории для курсов и семинаров
+  a.btn (href = new_admin_category_path style = "float: right") Создать категорию
+
+table.table
+  thead
+    tr
+      th Название категории
+      th Количество курсов
+      th
+  tbody
+    - @categories.each do |category|
+      tr
+        td = category.name
+        td
+        td 
+          = link_to "редактировать", edit_admin_category_path(category), class: ['btn', 'btn-default']
+          = " "
+          = link_to "удалить", admin_category_path(category), method: :delete, confirm: "Удалить категорию?", class: ['btn', 'btn-default']

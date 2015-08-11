@@ -1,0 +1,6 @@
+legend
+  | Редактирование категории
+
+.row
+  .col-md-8
+    = render partial: "admin/categories/form", locals: {category: @category, url: admin_category_path(@category)}
