@@ -1,0 +1,16 @@
+.well.nested-fields
+  - if f.object.id?
+    .alert.alert-success Этот диплом уже прикреплен к преподавателю
+  - else
+    .alert.alert-info Добавьте новый диплом
+
+  .row
+    .col-md-6
+      = f.input :name
+      = f.input :image
+      = link_to_remove_association "Удалить диплом", f, class: ['btn', 'btn-default'], data: {confirm: 'Вы уверены?'}
+    .col-md-6
+
+      - if f.object.image?
+        = image_tag f.object.image_url(:thumb)
+     

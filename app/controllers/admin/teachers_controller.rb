@@ -5,6 +5,7 @@ class Admin::TeachersController < AdminController
 
   def new
     @teacher = Teacher.new
+    @teacher.teacher_diploms.build
   end
 
   def create

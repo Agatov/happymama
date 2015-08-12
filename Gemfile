@@ -21,6 +21,7 @@ gem 'turbolinks'
 gem 'thin'
 
 gem 'simple_form', github: 'plataformatec/simple_form'
+gem "cocoon"
 
 
 # Use unicorn as the app server

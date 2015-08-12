@@ -5,3 +5,8 @@
     .name = teacher.name
     .position = teacher.position
     .about = teacher.about
+  .diploms
+    - teacher.teacher_diploms.each do |diplom|
+      .diplom
+        a (href = diplom.image_url target = "_blank")
+          = diplom.name

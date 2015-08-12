@@ -2,5 +2,17 @@
   = f.input :name
   = f.input :position
   = f.input :avatar
-  = f.input :about
-  = f.submit 'Готово', class: [:btn, 'btn-lg', 'btn-success']
+  - if f.object.avatar
+    = image_tag f.object.avatar_url(:thumb)
+  = f.input :about, as: :text
+
+  #teacher-diploms
+    = f.simple_fields_for :teacher_diploms do |d|
+      = render "teacher_diplom_fields", f: d
+
+
+  = link_to_add_association 'Добавить диплом', f, :teacher_diploms, 'data-association-insertion-node' => "#teacher-diploms", 'data-association-insertion-method' => "append"
+
+
+  .well
+    = f.submit 'Готово', class: [:btn, 'btn-lg', 'btn-success']

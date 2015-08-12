@@ -20,6 +20,7 @@
 //= require jquery.ui.widget
 //= require fileupload/jquery.iframe-transport
 //= require fileupload/jquery.fileupload
+//= require cocoon
 //= require initializer_admin
 
 
