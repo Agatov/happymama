@@ -1,0 +1,18 @@
+- title "Жемчужинка | Отзывы"
+
+.wrapper
+  .page-path
+    = link_to "Главная страница", root_path
+    = " / "
+  .page-name 
+    = "#{@reviews.count.to_s} "
+    = Russian.p(@reviews.count, "отзыв ", "отзыва ", "отзывов ")
+    |  о семейном центре Жемчужинка
+
+section
+  .wrapper
+    .reviews
+      - @reviews.each do |review|
+        a.review(href = review.image_url target = "_blank")
+          .overlay = "№#{review.id.to_s}"
+          = image_tag review.image_url(:thumb)

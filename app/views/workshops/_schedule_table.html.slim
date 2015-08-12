@@ -1,0 +1,28 @@
+section.striped
+  .wrapper
+    .subtitle Ближайшие группы
+
+    table.workshop-schedule
+      thead
+        tr
+          th Дата и время
+          th Площадка
+          th Размер группы
+          th Количество свободных мест
+
+      tbody
+        - workshop.groops.each do |groop|
+          tr
+            td 
+              = Russian::strftime(groop.date, "%d %B")
+              = " в #{groop.time}"
+            td = "«#{groop.place.metro}»"
+            td 
+              = groop.total_seats.to_s
+              = Russian.p(groop.total_seats, " человек", " человека", " человек")
+            td
+              - if groop.reserved_seats == 0
+                | Все места свободны
+              - else
+                = "Осталось #{groop.seats_available.to_s}"
+                = Russian.p(groop.seats_available, " место", " места", " мест")

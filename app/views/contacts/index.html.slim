@@ -1,0 +1,23 @@
+- title "Жемчужинка | Контакты"
+
+.wrapper
+  .page-path
+    = link_to "Главная страница", root_path
+    = " / "
+  .page-name Наши залы для занятий в Москве
+
+section
+  .wrapper
+    .places
+      table.contacts
+        thead
+          tr
+            th Станция метро
+            th Телефон
+            th Адрес
+        tbody
+          - @places.each do |place|
+            tr
+              td = "«#{place.metro}»"
+              td = place.phone
+              td = place.address

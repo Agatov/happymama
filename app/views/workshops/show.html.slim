@@ -1,5 +1,17 @@
 - title "Жемчужинка | #{@workshop.name}"
 
+
+.modal-overlay
+.modal
+  .modal-title
+    | Оставьте ваши контактные данные и мы вам перезвоним
+  .modal-form
+    form#order-form
+      input.username (type = "text" name = "username" placeholder = "Как вас зовут?")
+      input.phone (type = "text" name = "phone" placeholder = "Ваш номер телефона")
+      input.button (type = "submit" value = "Записаться")
+    .modal-result
+
 .wrapper
   .page-path
     = link_to "Главная страница", root_path
@@ -43,7 +55,7 @@ section
                   | 
                     При единоразовой покупке
                     всех занятий курса
-          .button Записаться
+          .button#order-button (workshop_id = @workshop.id.to_s) Записаться
 
 
 = render partial: "workshops/schedule_table", locals: {workshop: @workshop}
@@ -61,3 +73,15 @@ section
       .teachers
         - @workshop.teachers.each do |teacher|
           = render partial: "teachers/teacher", locals: {teacher: teacher}
+
+section
+  .wrapper
+    .subtitle 
+      | Отзывы о курсах подготовки к родам
+    .reviews
+      - @reviews.each do |review|
+        a.review(href = review.image_url target = "_blank")
+          .overlay = "№#{review.id.to_s}"
+          = image_tag review.image_url(:thumb)
+
+    = link_to "Смотреть все отзывы", reviews_path, class: "reviews-ghost-button"

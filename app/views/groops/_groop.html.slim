@@ -1,0 +1,20 @@
+.groop
+  .date
+    = Russian::strftime(groop.date, "%d %B")
+    = " в #{groop.time}"
+  .content
+    = link_to "«#{groop.workshop.name}»", workshop_path(groop.workshop)
+    br
+    - if groop.workshop.course
+      = "Стоимость курса #{groop.workshop.course_price.to_s} "
+      = Russian.p(groop.workshop.course_price, " рубль. ", " рубля. ", " рублей. ")
+    - else
+      = "Стоимость семинара #{groop.workshop.price.to_s} "
+      = Russian.p(groop.workshop.price, " рубль. ", " рубля. ", " рублей. ")
+
+
+    - if groop.reserved_seats == 0
+      | Все места свободны.
+    - else
+      = "Осталось #{groop.seats_available.to_s}"
+      = Russian.p(groop.seats_available, " место.", " места.", " мест.")

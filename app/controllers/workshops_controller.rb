@@ -5,5 +5,6 @@ class WorkshopsController < ApplicationController
 
   def show
     @workshop = Workshop.find params[:id]
+    @reviews = Review.order("id desc").limit(12)
   end
 end

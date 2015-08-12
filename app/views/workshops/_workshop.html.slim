@@ -16,6 +16,6 @@ a.workshop (href = workshop_path(workshop) class = (hidden ? 'hidden' : nil) cat
         = Russian.p(workshop.duration, "минута", "минуты", "минут")
     .price 
       - if workshop.course?
-        = "#{workshop.course_price.to_s}Р"
+        = pretty_price workshop.course_price
       - else
-        = "#{workshop.price.to_s}Р"
+        = pretty_price workshop.price

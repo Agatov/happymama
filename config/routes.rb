@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :workshops, only: [:index, :show]
   resources :contacts, only: :index
   resources :reviews, only: :index
+  resources :orders, only: :create
 
   namespace :admin do
     resources :workshops do
