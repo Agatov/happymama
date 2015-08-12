@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -44,9 +43,19 @@ gem 'geocoder'
 gem 'mysql2', group: :production
 
 gem 'net-ssh', '~>2.7.0'
-gem 'capistrano', '~> 2.15.5', group: :development
 gem 'wysiwyg-rails'
 gem 'font-awesome-rails'
 
 gem 'bxslider-rails'
 gem "slim"
+
+gem "jbuilder"
+
+group :test, :development do
+  gem 'sqlite3'
+  gem 'pry-byebug'
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano3-unicorn'
+  gem 'letter_opener_web', '~> 1.2.0'
+end

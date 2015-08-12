@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   def create
     order = Order.new order_params
     order.save
+    OrderMailer.new_order(order).deliver_now
     render json: {status: :ok}
   end
 

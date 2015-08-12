@@ -20,9 +20,6 @@ $ ->
 
 
   $("#order-form").on "submit", ->
-    console.log $(@).serialize()
-
-
     username = $("input[name=username]").val()
     phone = $("input[name=phone]").val()
 
