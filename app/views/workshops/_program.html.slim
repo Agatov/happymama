@@ -7,10 +7,10 @@
       .program-section
         .program-section-name Теоретическая часть
         .program-section-content 
-          = program.theoretical_part
+          = program.theoretical_part.gsub("\n", "<br />").html_safe
 
     - if program.practical_part.length > 0
       .program-section
         .program-section-name Практическая часть
         .program-section-content
-          = program.practical_part
+          = program.practical_part.gsub("\n", "<br />").html_safe

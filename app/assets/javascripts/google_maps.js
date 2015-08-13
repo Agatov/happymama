@@ -61,4 +61,6 @@ function initializeMap() {
 
 }
 
-google.maps.event.addDomListener(window, 'load', initializeMap);
+if ($("#map").attr('id')) {
+  google.maps.event.addDomListener(window, 'load', initializeMap);
+}
