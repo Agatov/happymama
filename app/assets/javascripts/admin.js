@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./bootstrap
-//= require froala_editor.min.js
-//= require langs/ru.js
+// В бутсрапе нарушен порядок подключения (сначала тултип, потом поповер надо)
+// Но не факт что бутстрап вообще нужен тут
+// require_tree ./bootstrap
 //= require datepicker/bootstrap-datepicker
 //= require datepicker/bootstrap-datepicker.ru.min
 //= require jquery.ui.widget

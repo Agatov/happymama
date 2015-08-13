@@ -3,6 +3,6 @@
   = f.association :place, label_method: :metro, value_method: :id
   = f.input :reserved_seats
   = f.input :total_seats
-  = f.input :date, as: :string, input_html: {class: "datepicker", value: (f.object.date ? f.object.date.strftime("%Y-%m-%d") : nil)}
+  = f.input :date, as: :string, input_html: {class: "datepicker", value: (f.object.date ? f.object.date.strftime("%d-%m-%Y") : nil)}
   = f.input :time
   = f.submit 'Готово', class: [:btn, 'btn-lg', 'btn-success']

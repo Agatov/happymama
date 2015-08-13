@@ -1,6 +1,5 @@
 $ ->
 
-  
   $('.redactor').redactor
     lang: 'ru'
     plugins: ['fullscreen']
@@ -8,6 +7,7 @@ $ ->
 
   $("input.datepicker").datepicker
     language: "ru"
+    autoclose: true
 
   $("#fileupload").fileupload
     url: "/admin/reviews"
