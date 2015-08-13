@@ -61,6 +61,8 @@ function initializeMap() {
 
 }
 
-if ($("#map").attr('id')) {
-  google.maps.event.addDomListener(window, 'load', initializeMap);
+ready() {
+  if ($("#map").attr('id')) {
+    google.maps.event.addDomListener(window, 'load', initializeMap);
+  }
 }
