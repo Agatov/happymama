@@ -1,9 +1,10 @@
 /*
  *= require bootstrap
- *= require froala_editor.min.css
- *= require froala_style.min.css
- *= require font-awesome
+ *= require redactor/redactor.css
  *= require datepicker/bootstrap-datepicker
+ *= require_self
  */
 
-/*@import "font-awesome";*/
+ textarea {
+  height: 150px !important;
+}

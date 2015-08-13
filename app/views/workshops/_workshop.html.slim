@@ -9,13 +9,15 @@ a.workshop (href = workshop_path(workshop) class = (hidden ? 'hidden' : nil) cat
   .footer
     .duration 
       - if workshop.course?
-        = "#{workshop.workshops_count.to_s} "
-        = Russian.p(workshop.workshops_count, "занятие", "занятия", "занятий")
+        - if workshop.workshops_count
+          = "#{workshop.workshops_count.to_s} "
+          = Russian.p(workshop.workshops_count, "занятие", "занятия", "занятий")
       - else
-        = "#{workshop.duration.to_s} "
-        = Russian.p(workshop.duration, "минута", "минуты", "минут")
+        - if workshop.duration
+          = "#{workshop.duration.to_s} "
+          = Russian.p(workshop.duration, "минута", "минуты", "минут")
     .price 
       - if workshop.course?
-        = pretty_price workshop.course_price
+        = pretty_price workshop.course_price if workshop.course_price
       - else
-        = pretty_price workshop.price
+        = pretty_price workshop.price if workshop.price

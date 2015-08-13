@@ -14,15 +14,24 @@ section.striped
         - workshop.groops.each do |groop|
           tr
             td 
-              = Russian::strftime(groop.date, "%d %B")
-              = " в #{groop.time}"
+              - if groop.date
+                = Russian::strftime(groop.date, "%d %B")
+                = " в #{groop.time}"
+              - else
+                | Дата не указана
             td = "«#{groop.place.metro}»"
             td 
-              = groop.total_seats.to_s
-              = Russian.p(groop.total_seats, " человек", " человека", " человек")
+              - if groop.total_seats
+                = groop.total_seats.to_s
+                = Russian.p(groop.total_seats, " человек", " человека", " человек")
+              - else
+                = "-"
             td
               - if groop.reserved_seats == 0
                 | Все места свободны
               - else
-                = "Осталось #{groop.seats_available.to_s}"
-                = Russian.p(groop.seats_available, " место", " места", " мест")
+                - if groop.seats_available and groop.seats_available > 0
+                  = "Осталось #{groop.seats_available.to_s}"
+                  = Russian.p(groop.seats_available, " место", " места", " мест")
+                - else
+                  | Все места заняты

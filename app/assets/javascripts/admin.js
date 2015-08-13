@@ -21,6 +21,12 @@
 //= require fileupload/jquery.iframe-transport
 //= require fileupload/jquery.fileupload
 //= require cocoon
+
+//= require redactor/redactor.min.js
+//= require redactor/ru.js
+//= require redactor/fullscreen
+//= require redactor/table
+
 //= require initializer_admin
 
 

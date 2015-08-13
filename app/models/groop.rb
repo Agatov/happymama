@@ -3,6 +3,10 @@ class Groop < ActiveRecord::Base
   belongs_to :place
 
   def seats_available
-    total_seats - reserved_seats
+    if total_seats and reserved_seats
+      total_seats - reserved_seats 
+    else
+      nil
+    end
   end
 end
