@@ -1,5 +1,9 @@
 /*Google Maps*/
 function initializeMap() {
+    if ($("#map").attr('id') == undefined) {
+      return false
+    }
+    console.log("initialize map");
     var map = new google.maps.Map(document.getElementById('map'),
         mapOptions);
     var featureOpts = [ { "stylers": [ { "saturation": -100 } ] } ];
@@ -62,9 +66,8 @@ function initializeMap() {
 }
 
 ready = function() {
-  if ($("#map").attr('id')) {
-    google.maps.event.addDomListener(window, 'load', initializeMap);
-  }
+  google.maps.event.addDomListener(window, 'load', initializeMap);
+  google.maps.event.addDomListener(document, 'page:load', initializeMap);
 };
 
 $(document).ready(ready);
