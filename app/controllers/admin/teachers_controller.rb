@@ -1,6 +1,6 @@
 class Admin::TeachersController < AdminController
   def index
-    @teachers = Teacher.order(:id)
+    @teachers = Teacher.order(:number)
   end
 
   def new

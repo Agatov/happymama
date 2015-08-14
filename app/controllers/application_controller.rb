@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     @course_groops = Groop.joins(:workshop).where("workshops.course = ?", true).order("date").limit(5)
     @seminar_groops = Groop.joins(:workshop).where("workshops.course = ?", false).order("date").limit(5)
 
-    @teachers = Teacher.order(:id)
+    @teachers = Teacher.order(:number)
 
     @reviews_count = Review.count
   end

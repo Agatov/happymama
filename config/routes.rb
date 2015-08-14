@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :orders, only: :create
 
   namespace :admin do
+
+    root to: "groops#index"
+
     resources :workshops do
       resources :programs
     end

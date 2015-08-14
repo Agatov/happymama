@@ -5,12 +5,14 @@ legend
 table.table
   thead
     tr
+      th Номер на сайте
       th Имя
       th Должность
       th
   tbody
     - @teachers.each do |teacher|
       tr
+        td = teacher.number.to_s
         td = teacher.name
         td = teacher.position
         td 
