@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
   def index
     @categories = Category.order(:id)
 
-    @course_groops = Groop.joins(:workshop).where("workshops.course = ?", true).order("date desc").limit(5)
-    @seminar_groops = Groop.joins(:workshop).where("workshops.course = ?", false).order("date desc").limit(5)
+    @course_groops = Groop.joins(:workshop).where("workshops.course = ?", true).order("date").limit(5)
+    @seminar_groops = Groop.joins(:workshop).where("workshops.course = ?", false).order("date").limit(5)
 
     @teachers = Teacher.order(:id)
+
+    @reviews_count = Review.count
   end
 end
