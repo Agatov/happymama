@@ -66,7 +66,6 @@ window.render_validation_errors = (invalid_fields) ->
 
 window.render_validation_error = (field) ->
   $("input[name=#{field.field}]").addClass "invalid"
-  console.log field
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
