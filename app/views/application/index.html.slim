@@ -37,6 +37,17 @@ section
           | 
             За 15 лет работы наши курсы и семинары посетили более девяти тысяч слушателей.
 
+
+- if @discount_workshop
+  .discount-banner
+    .wrapper
+      .discount-text
+        | Семинар со <strong>скидкой 50%</strong>
+      .workshop-name 
+        = "«#{@discount_workshop.name}»"
+
+      = link_to "Подробнее о семинаре →", workshop_path(@discount_workshop), class: "button"
+
 section.without-bottom-padding
   .wrapper
     .title Наши курсы и семинары

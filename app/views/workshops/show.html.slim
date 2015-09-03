@@ -42,13 +42,24 @@ section
             .workshop-prices
               - if @workshop.price
                 .price
-                  .sum
-                    = pretty_price @workshop.price
+                  - if @workshop.discount
+                    .sum.old-price
+                      = pretty_price @workshop.price
+                    .sum 
+                      = pretty_price (@workshop.price / (100 / @workshop.discount)).round
+                  - else
+                    .sum
+                      = pretty_price @workshop.price
+
+                  
                   .details
                     - if @workshop.course?
-                      | За любое занятие курса
+                      | За любое занятие курса 
                     - else
-                      | За разовое посещение семинара
+                      | За разовое посещение семинара 
+
+                    - if @workshop.discount
+                      = " с учетом скидки #{@workshop.discount.to_s}%"
 
               - if @workshop.course? and @workshop.course_price
                 .price

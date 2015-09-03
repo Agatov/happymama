@@ -12,5 +12,6 @@ class ApplicationController < ActionController::Base
     @teachers = Teacher.order(:number)
 
     @reviews_count = Review.count
+    @discount_workshop = Workshop.where('discount is not null').first
   end
 end
