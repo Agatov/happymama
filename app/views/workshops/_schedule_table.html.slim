@@ -16,10 +16,12 @@ section.striped
             td 
               - if groop.date
                 = Russian::strftime(groop.date, "%d %B")
-                = " в #{groop.time}"
+                = " в #{groop.time}" if groop.time
               - else
                 | Дата не указана
-            td = "«#{groop.place.metro}»"
+            td
+              - if groop.place 
+                = "«#{groop.place.metro}»"
             td 
               - if groop.total_seats
                 = groop.total_seats.to_s
