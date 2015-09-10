@@ -14,4 +14,16 @@ class ApplicationController < ActionController::Base
     @reviews_count = Review.count
     @discount_workshop = Workshop.where('discount is not null').first
   end
+
+  def surprise
+    @categories = Category.order(:id)
+
+    @course_groops = Groop.joins(:workshop).where("workshops.course = ?", true).order("date").limit(5)
+    @seminar_groops = Groop.joins(:workshop).where("workshops.course = ?", false).order("date").limit(5)
+
+    @teachers = Teacher.order(:number)
+
+    @reviews_count = Review.count
+    @discount_workshop = Workshop.where('discount is not null').first
+  end
 end

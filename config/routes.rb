@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "application#index"
 
+  get "/surprise", to: "application#surprise"
+
   resources :workshops, only: [:index, :show]
   resources :contacts, only: :index
   resources :reviews, only: :index

@@ -1,0 +1,96 @@
+.intro
+  .wrapper
+    .intro-title
+      |
+        Обучающие курсы и семинары 
+        для будущих мам и пап
+
+
+section
+  .wrapper
+    .facts
+      .fact
+        .fact-name
+          | 15 
+          em лет опыта
+        .fact-text
+          | 
+            Тренинговый центр «Жемчужинка» функционирует в течение пятнадцати лет, а открыт он был 12 мая 2000 года
+
+      .fact
+        .fact-name
+          = @reviews_count.to_s
+          em 
+            = Russian.p(@reviews_count, " отзыв", " отзыва", " отзывов")
+        .fact-text
+          | 
+            На странице «Отзывы» вы можете ознакомиться с 
+          = @reviews_count.to_s  
+          = Russian.p(@reviews_count, " рукописными отзывом ", " рукописными отзывами ", " рукописными отзывами ")
+          | о нашей организации
+
+      .fact
+        .fact-name
+          | 9 000 
+          em слушателей
+        .fact-text
+          | 
+            За 15 лет работы наши курсы и семинары посетили более девяти тысяч слушателей.
+
+
+- if @discount_workshop
+  .discount-banner
+    .wrapper
+      .discount-text
+        | Семинар со <strong>скидкой 50%</strong>
+      .workshop-name 
+        = "«#{@discount_workshop.name}»"
+
+      = link_to "Подробнее о семинаре →", workshop_path(@discount_workshop), class: "button"
+
+section.without-bottom-padding
+  .wrapper
+    .title Наши курсы и семинары
+
+    ul.workshops-categories
+      - @categories.each do |category|
+        li (class = (category.id == @categories.first.id ? 'active' : nil ) category_id = category.id.to_s)
+          a (href = "#") = category.name
+
+  .workshops.blue
+    .wrapper
+      - @categories.each do |category|
+        - category.workshops.each do |workshop|
+          - hidden = workshop.category_id != @categories.first.id ? true : false
+          = render partial: "workshops/workshop", locals: {workshop: workshop, hidden: hidden}
+
+
+section
+  .wrapper
+    .title Расписание ближайших занятий
+
+    .groop-columns
+      .groop-column.only-groops
+        .groop-column-title Ближайшие группы
+        .groops
+          - @course_groops.each do |groop|
+            = render partial: "groops/groop", locals: {groop: groop}
+
+
+      .groop-column.only-seminars
+        .groop-column-title Ближайшие семинары
+        .groops
+          - @seminar_groops.each do |groop|
+            = render partial: "groops/groop", locals: {groop: groop}
+
+
+
+section.striped
+  .wrapper
+    .title Наши преподаватели
+
+    .teachers
+      - @teachers.each do |teacher|
+        = render partial: "teachers/teacher", locals: {teacher: teacher}
+
+= render partial: "layouts/getreview"
