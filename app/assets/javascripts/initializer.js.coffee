@@ -1,5 +1,9 @@
 ready = ->
 
+  $(document).on "gr:widget:ready", ->
+    console.log "1111"
+    $(document).on('page:load', initGetReview
+
   $("ul.workshops-categories li a").on "click", ->
     $(@).parent().addClass("active")
     $(@).parent().siblings().removeClass("active")
@@ -67,9 +71,9 @@ window.render_validation_errors = (invalid_fields) ->
 window.render_validation_error = (field) ->
   $("input[name=#{field.field}]").addClass "invalid"
 
+initGetReview = ->
+  $(document).trigger "gr:widget:initialize"
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
-
-$(document).on "gr:widget:ready", ->
-  $(document).on('page:load', GetReview.API.initialize)
 
