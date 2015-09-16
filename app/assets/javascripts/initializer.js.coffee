@@ -69,5 +69,7 @@ window.render_validation_error = (field) ->
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
-$(document).on('page:load', GetReview.API.initialize)
+
+$(document).on "gr:widget:ready", ->
+  $(document).on('page:load', GetReview.API.initialize)
 
