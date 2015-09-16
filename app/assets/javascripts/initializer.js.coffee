@@ -2,7 +2,7 @@ ready = ->
 
   $(document).on "gr:widget:ready", ->
     console.log "1111"
-    $(document).on('page:load', initGetReview
+    $(document).on('page:load', initGetReview)
 
   $("ul.workshops-categories li a").on "click", ->
     $(@).parent().addClass("active")

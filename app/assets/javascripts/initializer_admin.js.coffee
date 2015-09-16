@@ -13,4 +13,3 @@ $ ->
     url: "/admin/reviews"
     done: (e, data) ->
       $("#reviews").prepend data.result
-      console.log data.result
