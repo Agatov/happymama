@@ -4,6 +4,7 @@ class Workshop < ActiveRecord::Base
   has_many :teachers, through: :workshop_teachers
   has_many :groops
   has_many :workshop_course_programs
+  has_many :orders
   mount_uploader :image, WorkshopImageUploader
 
 end
