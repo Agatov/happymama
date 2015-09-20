@@ -21,6 +21,8 @@ ready = ->
       $(".modal-overlay").hide()
       $(".modal").hide()
 
+    $("#order-form").attr "workshop_id", $(@).attr("workshop_id")
+
 
   $("#order-form").on "submit", ->
     username = $("input[name=username]").val()
@@ -42,7 +44,8 @@ ready = ->
       '/orders'
       {
         "order[username]": username,
-        "order[phone]": phone
+        "order[phone]": phone,
+        "order[workshop_id]": $(@).attr("workshop_id")
       }
       (data) =>
         $("input").removeClass "invalid"
