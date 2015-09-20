@@ -1,7 +1,7 @@
 .groop
   .date
     = Russian::strftime(groop.date, "%d %B")
-    = " в #{groop.time}" if groop.time
+    = " в #{groop.time}" if groop.time and groop.time != ''
   .content
     = link_to "«#{groop.workshop.name}»", workshop_path(groop.workshop)
     br
