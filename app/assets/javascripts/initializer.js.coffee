@@ -1,5 +1,14 @@
 ready = ->
 
+  try
+    document.addEventListener "gr:widget:ready", ->
+      $(document).on "page:load", ->
+        grInitEvent = new CustomEvent("gr:widget:initialize")
+        document.dispatchEvent grInitEvent
+  catch
+    # Обрабатывать не нужно
+
+
   $(document).on "gr:widget:ready", ->
     $(document).on('page:load', initGetReview)
 
