@@ -1,6 +1,6 @@
 .groop
   .date
-    = Russian::strftime(groop.date, "%d %B")
+    = Russian::strftime(groop.date, "%A, %d %B")
     = " в #{groop.time}" if groop.time and groop.time != ''
   .content
     = link_to "«#{groop.workshop.name}»", workshop_path(groop.workshop)
@@ -23,4 +23,7 @@
         = "Осталось #{groop.seats_available.to_s}"
         = Russian.p(groop.seats_available, " место.", " места.", " мест.")
       - else
-        | Все места заняты
+        | Свободных мест не осталось.
+
+    - if groop.details
+      = " #{groop.details}"

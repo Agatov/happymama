@@ -7,4 +7,7 @@ class Workshop < ActiveRecord::Base
   has_many :orders
   mount_uploader :image, WorkshopImageUploader
 
+  validates :category_id, presence: true
+  validates :name, length: {minimum: 1}
+
 end

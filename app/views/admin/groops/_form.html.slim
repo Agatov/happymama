@@ -5,4 +5,5 @@
   = f.input :total_seats
   = f.input :date, as: :string, input_html: {class: "datepicker", value: (f.object.date ? f.object.date.strftime("%d-%m-%Y") : nil)}
   = f.input :time
+  = f.input :details
   = f.submit 'Готово', class: [:btn, 'btn-lg', 'btn-success']

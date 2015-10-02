@@ -27,6 +27,7 @@ ru:
         description: "Полное описание (выводится на странице курсы или семинара)"
         teachers: Преподаватели
         discount: "Скидка (%)"
+        service: "Отметьте, если это услуга"
 
       teacher:
         name: "Имя"
@@ -42,6 +43,7 @@ ru:
         time: "Время"
         total_seats: "Мест всего"
         reserved_seats: "Мест занято"
+        details: "Дополнительная информация"
 
       workshop_course_program:
         day: "Номер занятия"

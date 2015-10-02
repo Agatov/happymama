@@ -15,7 +15,7 @@ section.striped
           tr
             td 
               - if groop.date
-                = Russian::strftime(groop.date, "%d %B")
+                = Russian::strftime(groop.date, "%A, %d %B")
                 = " в #{groop.time}" if groop.time
               - else
                 | Дата не указана
@@ -36,4 +36,4 @@ section.striped
                   = "Осталось #{groop.seats_available.to_s}"
                   = Russian.p(groop.seats_available, " место", " места", " мест")
                 - else
-                  | Все места заняты
+                  | Свободных мест не осталось

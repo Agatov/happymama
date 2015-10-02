@@ -12,7 +12,7 @@
       input.button (type = "submit" value = "Записаться")
     .modal-result
 
-.wrapper
+.wrapper (style = "margin-bottom: 30px;")
   .page-path
     = link_to "Главная страница", root_path
     = " / "
@@ -20,24 +20,37 @@
     = " / "
   .page-name = @workshop.name
 
+- if @workshop.groops.count > 0
+  = render partial: "workshops/schedule_table", locals: {workshop: @workshop}
+
 section
-  .wrapper
+  .wrapper 
     #workshop
       .left-side
+        //.title 
+          - if @workshop.course?
+            | Об этом курсе
+
+          - else
+            | Об этом семинаре
 
         = @workshop.description.html_safe if @workshop.description
 
-        .programs
-          - @workshop.workshop_course_programs.order(:id).each do |program|
-            = render partial: "workshops/program", locals: {program: program}
+        - if @workshop.course?
+          .programs
+            - @workshop.workshop_course_programs.order(:id).each do |program|
+              = render partial: "workshops/program", locals: {program: program}
       .right-side
         - if @workshop.price or @workshop.course_price
           .right-side-widget
             .widget-name 
-              - if @workshop.course
-                | Стоимость курса
+              - if @workshop.service?
+                | Стоимость услуги
               - else
-                | Стоимость семинара
+                - if @workshop.course?
+                  | Стоимость курса
+                - else
+                  | Стоимость семинара
 
             .workshop-prices
               - if @workshop.price
@@ -53,15 +66,16 @@ section
 
                   
                   .details
-                    - if @workshop.course?
-                      | За любое занятие курса 
-                    - else
-                      | За разовое посещение семинара 
+                    - unless @workshop.service?
+                      - if @workshop.course?
+                        | За любое занятие курса 
+                      - else
+                        | За разовое посещение семинара 
 
                     - if @workshop.discount
                       = " с учетом скидки #{@workshop.discount.to_s}%"
 
-              - if @workshop.course? and @workshop.course_price
+              - if @workshop.course? and @workshop.course_price and !@workshop.service?
                 .price
                   .sum
                     = pretty_price @workshop.course_price
@@ -69,14 +83,16 @@ section
                     | 
                       При единоразовой покупке
                       всех занятий курса
-            .button#order-button (workshop_id = @workshop.id.to_s) Записаться
+            .button#order-button (workshop_id = @workshop.id.to_s) 
+              - if @workshop.service?
+                | Заказать
+              - else
+                | Записаться
 
-- if @workshop.groops.count > 0
-  = render partial: "workshops/schedule_table", locals: {workshop: @workshop}
 = render partial: "workshops/exclusives"
 
 - if @workshop.teachers.count > 0
-  section.striped
+  section
     .wrapper
       .subtitle 
         - if @workshop.course? 
@@ -88,7 +104,7 @@ section
         - @workshop.teachers.each do |teacher|
           = render partial: "teachers/teacher", locals: {teacher: teacher}
 
-section
+section.striped
   .wrapper
     .subtitle 
       | Отзывы о курсах подготовки к родам
