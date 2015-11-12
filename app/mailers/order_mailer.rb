@@ -3,6 +3,6 @@ class OrderMailer < ActionMailer::Base
 
   def new_order(order)
     @order = order
-    mail(to: "info@lifepearl.ru, abardacha@gmail.com", subject: "Поступила новая заявка")
+    mail(to: "evgeniya@lifepearl.ru, abardacha@gmail.com", subject: "Поступила новая заявка")
   end
 end
