@@ -14,7 +14,7 @@ class WorkshopImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [300, 475]
+    process :resize_to_fill => [300, 475]
   end
 
   def extension_white_list
