@@ -42,7 +42,7 @@ section
   .discount-banner
     .wrapper
       .discount-text
-        | Семинар со <strong>скидкой 50%</strong>
+        == "Семинар со <strong>скидкой #{@discount_workshop.discount.to_s}%</strong>"
       .workshop-name 
         = "«#{@discount_workshop.name}»"
 

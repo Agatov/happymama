@@ -59,7 +59,7 @@ section
                     .sum.old-price
                       = pretty_price @workshop.price
                     .sum 
-                      = pretty_price (@workshop.price / (100 / @workshop.discount)).round
+                      = pretty_price (@workshop.price * (100 - @workshop.discount) / 100).round
                   - else
                     .sum
                       = pretty_price @workshop.price
