@@ -52,6 +52,8 @@ gem "slim"
 
 gem "jbuilder"
 
+gem 'calltouch_client', '~> 0.0.1'
+
 group :test, :development do
   gem 'sqlite3'
   gem 'pry-byebug'

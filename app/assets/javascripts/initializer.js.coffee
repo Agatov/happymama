@@ -55,6 +55,7 @@ ready = ->
         "order[username]": username,
         "order[phone]": phone,
         "order[workshop_id]": $(@).attr("workshop_id")
+        "order[session_id]": call_value
       }
       (data) =>
         $("input").removeClass "invalid"
