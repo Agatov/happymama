@@ -89,7 +89,9 @@ section
               - else
                 | Записаться
 
-= render partial: "workshops/exclusives"
+
+- if @workshop.course?
+  = render partial: "workshops/exclusives"
 
 - if @workshop.teachers.count > 0
   section
