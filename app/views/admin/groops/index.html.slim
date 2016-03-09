@@ -15,8 +15,11 @@ table.table
       tr
         td = groop.workshop.name
         td 
-          = groop.date.strftime("%Y-%m-%d")
-          = "в #{groop.time}"
+          - if groop.date
+            = groop.date.strftime("%Y-%m-%d")
+            = "в #{groop.time}"
+          - else
+            | нет
         td = groop.total_seats.to_s
         td = groop.seats_available.to_s
         td 
