@@ -1,0 +1,5 @@
+.post
+
+  .date = Russian::strftime(post.updated_at, "%d %B %Y года")
+  .title = link_to post.title, post_path(post)
+  .content = post.preview.html_safe

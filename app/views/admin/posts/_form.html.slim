@@ -1,0 +1,8 @@
+= simple_form_for post, url: url do |f|
+  = f.input :title
+  = f.input :announcement
+  = f.input :best
+  = f.input :preview, input_html: {class: "redactor"}
+  = f.input :content, input_html: {class: "redactor"}
+
+  = f.submit 'Готово', class: [:btn, 'btn-lg', 'btn-success']

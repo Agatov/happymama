@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/surprise", to: "application#surprise"
 
   resources :workshops, only: [:index, :show]
+  resources :posts, only: [:index, :show]
   resources :contacts, only: :index
   resources :reviews, only: :index
   resources :orders, only: :create
@@ -16,11 +17,13 @@ Rails.application.routes.draw do
     resources :workshops do
       resources :programs
     end
+
     resources :categories
     resources :teachers
     resources :groops
     resources :reviews
     resources :places
+    resources :posts
   end
 
   if Rails.env.development?

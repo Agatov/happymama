@@ -1,0 +1,17 @@
+legend
+  | Посты
+  a.btn (href = new_admin_post_path style = "float: right") Добавить пост
+
+table.table
+  thead
+    tr
+      th Название
+      th
+  tbody
+    - @posts.each do |post|
+      tr
+        td = post.title.to_s
+        td
+          = link_to "редактировать", edit_admin_post_path(post), class: ['btn', 'btn-default']
+          = " "
+          = link_to "удалить", admin_post_path(post), method: :delete, confirm: "Удалить преподавателя?", class: ['btn', 'btn-default']

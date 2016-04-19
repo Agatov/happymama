@@ -1,0 +1,6 @@
+legend
+  | Редактирование поста
+
+.row
+  .col-md-8
+    = render partial: "admin/posts/form", locals: {post: @post, url: admin_post_path(@post)}

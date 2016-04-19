@@ -56,3 +56,11 @@ ru:
         phone: "Номер телефона"
         address: "Адрес"
 
+      post:
+        title: "Заголовок"
+        preview: "Превью"
+        content: "Содержимое"
+        announcement: "Анонс"
+        best: "Лучшее"
+
+

@@ -53,9 +53,33 @@ section
                   | Стоимость семинара
 
             .workshop-prices
+
+              - if @workshop.course? and @workshop.course_price and !@workshop.service?
+                .price
+
+                  - if @workshop.discount
+                    .sum.old-price
+                      = pretty_price @workshop.course_price
+                    .sum
+                      = pretty_price (@workshop.course_price * (100 - @workshop.discount) / 100).round
+
+                    .details
+                      | 
+                        При единоразовой покупке
+                        всех занятий курса с учетом скидки
+                        #{@workshop.discount}%
+                  - else
+                    .sum
+                      = pretty_price @workshop.course_price
+                    .details
+                      | 
+                        При единоразовой покупке
+                        всех занятий курса
+
+
               - if @workshop.price
                 .price
-                  - if @workshop.discount
+                  - if @workshop.discount and ! @workshop.course
                     .sum.old-price
                       = pretty_price @workshop.price
                     .sum 
@@ -72,17 +96,10 @@ section
                       - else
                         | За разовое посещение семинара 
 
-                    - if @workshop.discount
+                    - if @workshop.discount and !@workshop.course
                       = " с учетом скидки #{@workshop.discount.to_s}%"
 
-              - if @workshop.course? and @workshop.course_price and !@workshop.service?
-                .price
-                  .sum
-                    = pretty_price @workshop.course_price
-                  .details
-                    | 
-                      При единоразовой покупке
-                      всех занятий курса
+
             .button#order-button (workshop_id = @workshop.id.to_s) 
               - if @workshop.service?
                 | Заказать

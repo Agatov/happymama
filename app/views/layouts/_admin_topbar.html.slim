@@ -8,6 +8,9 @@ nav.navbar.navbar-default (role = "navigation")
         li(class = (params[:controller] == 'admin/groops' ? 'active' : ''))
           a(href = admin_groops_path) Группы
 
+        li(class = (params[:controller] == 'admin/posts' ? 'active' : ''))
+          a(href = admin_posts_path) Посты
+
         li(class = (params[:controller] == 'admin/categories' ? 'active' : ''))
           a(href = admin_categories_path) Категории
 

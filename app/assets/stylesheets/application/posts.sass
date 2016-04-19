@@ -1,0 +1,100 @@
+#posts
+  @extend .clearfix
+
+  .left-side
+    float: left
+    width: 540px
+
+  .right-side
+    float: right
+    width: 300px
+    padding-top: 40px
+
+    .panel
+      @include blue_with_borders
+      width: 300px
+      box-sizing: border-box
+      padding: 30px 20px
+      margin-bottom: 30px
+
+      .panel-name
+        font-size: 20px
+        margin-bottom: 20px
+
+      .panel-item
+        margin-bottom: 15px
+
+        font-size: 15px
+        line-height: 20px
+
+
+        &:last-child
+          margin-bottom: 0px
+
+
+        .date
+          color: #777
+          margin-right: 5px
+          font-size: 13px
+
+        a
+          &:hover
+            text-decoration: underline
+
+
+.posts
+  width: 600px
+  margin-top: 30px
+  .post
+    border-bottom: 1px solid #eee
+    padding-bottom: 25px
+    margin-bottom: 25px
+
+    .title
+      margin-bottom: 20px
+      a
+
+        font-family: "OpenSans-Semibold"
+        font-size: 24px
+        line-height: 32px
+        
+
+        &:hover
+          text-decoration: underline
+
+
+    .date
+      font-family: "OpenSans-Italic"
+      font-size: 16px
+      color: #777
+      margin-bottom: 5px
+
+    .content
+      font-size: 16px
+      line-height: 27px
+      color: #222
+
+      p
+        
+        margin-bottom: 30px
+
+      ul
+        margin-left: 15px
+        margin-bottom: 30px
+        list-style: disc inside
+
+        li
+
+      ol
+        margin-left: 15px
+        margin-bottom: 30px
+        list-style: decimal inside
+
+      strong
+        font-family: "OpenSans-Semibold"
+
+      em
+        font-family: "OpenSans-Italic"
+
+      del
+        text-decoration: line-through

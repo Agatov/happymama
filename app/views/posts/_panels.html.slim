@@ -1,0 +1,15 @@
+.panel
+  .panel-name Анонсы
+
+  - announcements.each do |a|
+    .panel-item
+      .date = Russian::strftime(a.updated_at, "%d %B")
+      = link_to a.title, post_path(a)
+
+
+.panel
+  .panel-name Лучшее
+
+  - best_posts.each do |b|
+    .panel-item
+      = link_to b.title, post_path(b)

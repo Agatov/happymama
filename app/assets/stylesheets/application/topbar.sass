@@ -26,13 +26,14 @@
 
   .navigation
     float: left
-    margin-left: 200px
+    margin-left: 120px
     @extend .clearfix
     li
       float: left
       margin-right: 30px
       height: 80px
       line-height: 80px
+      //margin-top: 18px
 
       &:last-child
         margin-right: 0px
@@ -42,6 +43,11 @@
         font-size: 16px
         color: #4B5359
         text-decoration: none
+
+        &:hover
+          text-decoration: underline
+          color: #3999DA
+
   .phone
     float: right
     width: 200px

@@ -1,0 +1,17 @@
+- title "Жемчужинка | Статьи и анонсы"
+
+.wrapper
+  .page-path
+    = link_to "Главная страница", root_path
+    = " / "
+  .page-name Статьи и анонсы
+
+
+  #posts
+    .left-side
+      .posts
+        - @posts.each do |post|
+          = render partial: "post", locals: {post: post}
+
+    .right-side
+      = render partial: "panels", locals: {announcements: @announcements, best_posts: @best_posts}
