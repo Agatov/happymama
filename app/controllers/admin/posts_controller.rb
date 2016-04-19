@@ -1,6 +1,6 @@
 class Admin::PostsController < AdminController
   def index
-    @posts = Post.order(:id)
+    @posts = Post.order("id desc")
   end
 
   def new

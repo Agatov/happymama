@@ -5,12 +5,18 @@ legend
 table.table
   thead
     tr
+      th Дата
       th Название
+      th Анонс?
+      th Лучшая?
       th
   tbody
     - @posts.each do |post|
       tr
-        td = post.title.to_s
+        td = post.created_at.strftime("%d.%m")
+        td (style = "width: 600px") = post.title.to_s
+        td = post.announcement? ? "да" : "нет"
+        td = post.best? ? "да" : "нет"
         td
           = link_to "редактировать", edit_admin_post_path(post), class: ['btn', 'btn-default']
           = " "

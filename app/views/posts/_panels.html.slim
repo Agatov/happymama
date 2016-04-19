@@ -3,7 +3,7 @@
 
   - announcements.each do |a|
     .panel-item
-      .date = Russian::strftime(a.updated_at, "%d %B")
+      .date = Russian::strftime(a.created_at, "%d %B")
       = link_to a.title, post_path(a)
 
 
