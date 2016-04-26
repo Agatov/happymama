@@ -38,6 +38,18 @@ section
             За 15 лет работы наши курсы и семинары посетили более десяти тысяч слушателей.
 
 
+- if @announcements.count > 0
+  section.announcements-section
+    .wrapper
+      .title Анонсы
+
+      .announcements
+        - @announcements.each do |a|
+          .announcement
+            .date = Russian::strftime(a.created_at, "%d %B")
+            = link_to a.title, post_path(a)
+
+
 - if @discount_workshop
   .discount-banner
     .wrapper

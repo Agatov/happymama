@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
 
     @reviews_count = Review.count
     @discount_workshop = Workshop.where(course: false).where('discount is not null').first
+
+    @announcements = Post.where(announcement: true).order("created_at desc").limit(5)
   end
 
   def surprise
