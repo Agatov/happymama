@@ -78,16 +78,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Настройки для мандрила
-  config.action_mailer.default_url_options = { :host => 'iricrm.ru' }
-  config.action_mailer.smtp_settings = {
-  :address   => "smtp.mandrillapp.com",
-  :port      => 587,
-  :enable_starttls_auto => true,
-  :user_name => "cto@iricrm.ru",
-  :password  => "bHJ_D8Y0xGsZ6Zz9-ElLXw", # SMTP password is any valid API key
-  :authentication => 'login',
-  :domain => 'iricrm.ru',
-  }
+ActionMailer::Base.smtp_settings = {
+  :user_name => 'abardacha',
+  :password => '149fiolent249',
+  :domain => 'lifepearl.ru',
+  :address => 'smtp.sendgrid.net',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
